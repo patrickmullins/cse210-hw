@@ -33,6 +33,10 @@ class Program
         float average = ((float)sum) / numbers.Count;
         Console.WriteLine($"The average is: {average}");
         
-       
+        //listing the largest number
+        int maxNum = numbers[0];
+        maxNum = numbers.Max();
+        Console.WriteLine($"The largest number is: {maxNum}");
+        
     }
 }
