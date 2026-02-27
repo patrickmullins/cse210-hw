@@ -11,7 +11,18 @@ class Program
         string grade = Console.ReadLine();
         // initializing grade number as an int for future grade processing
         int gradeNumber = int.Parse(grade);
-        //temporary output of grade input to see if it is properly being passed
-        Console.Write(grade);
+        
+
+        string letter = "";
+        if (gradeNumber >= 93)
+        {
+            letter = "A";
+        }
+        else
+        {
+            letter = "F";
+        }
+
+        Console.WriteLine($"Your grade is: " + letter);
     }
 }
