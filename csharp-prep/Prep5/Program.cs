@@ -5,7 +5,13 @@ class Program
     static void Main(string[] args)
     {
         displayWelcome();
-        promptUserName();
+        string userName = promptUserName();
+        int favNum = promptUserNumber();
+        int birthYear;
+        promptUserBirthYear(out birthYear);
+        int squaredNumber = squareNumber(favNum);
+
+        displayResult(userName, squaredNumber, birthYear);
     }
     static void displayWelcome()
     {
@@ -21,19 +27,25 @@ class Program
 
     static int promptUserNumber()
     {
-        
+        Console.Write("Pease enter your favorite number: ");
+        int number = int.Parse(Console.ReadLine());
+        return number;
     }
 
-    static int promptUserBirthYear()
+    static void promptUserBirthYear(out int birthYear)
     {
+        Console.Write("Please enter the year you were born: ");
+        birthYear = int.Parse(Console.ReadLine());
         
     }
-    static int squareNumber()
+    static int squareNumber(int number)
     {
-        
+        int square = number * number;
+        return square;
     }
-    static void displayResult()
+    static void displayResult(string name, int square, int birthYear)
     {
-        
+        Console.WriteLine($"{name}, the square of your number is {square}.");
+        Console.WriteLine($"{name}, you will turn {2026 - birthYear} years old this year.");
     }
 }
