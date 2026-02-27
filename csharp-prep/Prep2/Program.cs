@@ -14,10 +14,28 @@ class Program
         
         // intializing letter as a string to convert number to a string output
         string letter = "";
+
+        //main grading program logic
         if (gradeNumber >= 93)
         {
             letter = "A";
         }
+
+        else if (gradeNumber >= 83)
+        {
+            letter = "B";
+        }
+
+        else if (gradeNumber >= 73)
+        {
+            letter = "C";
+        }
+
+        else if (gradeNumber >= 63)
+        {
+            letter = "D";
+        }
+
         else
         {
             letter = "F";
