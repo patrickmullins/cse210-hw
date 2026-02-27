@@ -12,7 +12,7 @@ class Program
         // initializing grade number as an int for future grade processing
         int gradeNumber = int.Parse(grade);
         
-
+        // intializing letter as a string to convert number to a string output
         string letter = "";
         if (gradeNumber >= 93)
         {
@@ -24,5 +24,15 @@ class Program
         }
 
         Console.WriteLine($"Your grade is: " + letter);
+        
+        if (gradeNumber >= 70)
+        {
+            Console.WriteLine("You passed the class!");
+        }
+
+        else
+        {
+            Console.WriteLine("Keep trying, you were close to passing!");
+        }
     }
 }
