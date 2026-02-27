@@ -1,4 +1,6 @@
 using System;
+using System.Linq.Expressions;
+using System.Runtime.CompilerServices;
 
 class Program
 {
@@ -24,6 +26,11 @@ class Program
             else if (guessNumber < magicNumber)
             {
                 Console.WriteLine("Try again, higher");
+            }
+            
+            else
+            {
+                Console.WriteLine("Try again, Lower");
             }
         }
     }
