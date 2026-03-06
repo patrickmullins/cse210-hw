@@ -6,9 +6,11 @@ class Program
     static void Main(string[] args)
     {
         PromptGenerator myGenerator = new PromptGenerator();
+       
         bool keepOnRunning = true;
         do
         {
+            
             Console.WriteLine("Please select one of the following choices: ");
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Display");
@@ -20,10 +22,13 @@ class Program
             switch(userInput)
             {
                 case "1":
-                Console.WriteLine("Write");
+                Entry newEntry = new Entry();
                 string currentPrompt = myGenerator.GetRandomPrompt();
                 Console.WriteLine(currentPrompt);
+                newEntry.PromptText = currentPrompt;
                 string JournalEntryText = Console.ReadLine();
+                newEntry.UserJournalWritten = JournalEntryText;
+                newEntry.Date = DateTime.Now.ToShortDateString();
                 break;
                 case "2":
                 Console.WriteLine("Display");
