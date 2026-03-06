@@ -5,6 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Random myGenerator = new Random();
         bool keepOnRunning = true;
         do
         {
@@ -20,6 +21,9 @@ class Program
             {
                 case "1":
                 Console.WriteLine("Write");
+                string currentPrompt = myGenerator.GetRandomPrompt();
+                Console.WriteLine(currentPrompt);
+                Console.ReadLine();
                 break;
                 case "2":
                 Console.WriteLine("Display");
