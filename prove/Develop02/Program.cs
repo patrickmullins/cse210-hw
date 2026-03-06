@@ -5,7 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Random myGenerator = new Random();
+        PromptGenerator myGenerator = new PromptGenerator();
         bool keepOnRunning = true;
         do
         {
@@ -23,7 +23,7 @@ class Program
                 Console.WriteLine("Write");
                 string currentPrompt = myGenerator.GetRandomPrompt();
                 Console.WriteLine(currentPrompt);
-                Console.ReadLine();
+                string JournalEntryText = Console.ReadLine();
                 break;
                 case "2":
                 Console.WriteLine("Display");
