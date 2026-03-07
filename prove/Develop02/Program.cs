@@ -6,6 +6,7 @@ class Program
     static void Main(string[] args)
     {
         PromptGenerator myGenerator = new PromptGenerator();
+        Journal myJournal = new Journal();
        
         bool keepOnRunning = true;
         do
@@ -29,9 +30,10 @@ class Program
                 string JournalEntryText = Console.ReadLine();
                 newEntry.UserJournalWritten = JournalEntryText;
                 newEntry.Date = DateTime.Now.ToShortDateString();
+                myJournal.AddEntry(newEntry);
                 break;
                 case "2":
-                Console.WriteLine("Display");
+                myJournal.DisplayAll();
                 break;
                 case "3":
                 Console.WriteLine("Load");
