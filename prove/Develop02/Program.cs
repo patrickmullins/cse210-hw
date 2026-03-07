@@ -1,7 +1,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.IO;
-
 class Program
 {
     static void Main(string[] args)
@@ -21,6 +20,7 @@ class Program
             Console.WriteLine("5. Quit");
             Console.Write("What would you like to do? ");
             string userInput = Console.ReadLine();
+            // using a switch to validate user input for the program. 
             switch(userInput)
             {
                 case "1":
@@ -37,12 +37,12 @@ class Program
                 myJournal.DisplayAll();
                 break;
                 case "3":
-                Console.WriteLine("What is the filename?");
+                Console.WriteLine("What is the filename that you want to load?");
                 string loadFile = Console.ReadLine();
                 myJournal.LoadFromFile(loadFile);
                 break;
                 case "4":
-                Console.WriteLine("What is the filename?");
+                Console.WriteLine("What is the filename that you want to save?");
                 string saveFile = Console.ReadLine();
                 myJournal.SaveToFile(saveFile);
                 break;

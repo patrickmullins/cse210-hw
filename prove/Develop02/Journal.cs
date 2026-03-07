@@ -31,13 +31,16 @@ class Journal
     }
     public void LoadFromFile(string file)
     {
+        
         // added code to clear the entries when trying to load a new one so it only show the current data in the text file.
+        // file.
         Entries.Clear();
         //string array to read the the entries from the text file
         string[] lines = File.ReadAllLines(file);
         foreach(string line in lines)
         {
-            //string array logic to determine the delimiter that was previously set in the SaveToFIle method.
+            
+            //string array logic to determine the delimiter that was previously set in the SaveToFile method.
             string[] parts = line.Split('|');
             Entry newEntry = new Entry();
             newEntry.Date = parts[0];
