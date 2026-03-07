@@ -1,3 +1,4 @@
+using System.IO;
 class Journal
 {
       
@@ -11,10 +12,19 @@ class Journal
     {
         foreach (Entry CurrentEntry in Entries)
         {
-        Console.WriteLine($"Date:  {CurrentEntry.Date} - Prompt: {CurrentEntry.PromptText}");
+        Console.WriteLine($"Date: {CurrentEntry.Date} - Prompt: {CurrentEntry.PromptText}");
         Console.WriteLine($"{CurrentEntry.UserJournalWritten}");
         Console.WriteLine();
         }
     }
-
+    public void SaveToFile(string file)
+    {
+        using (StreamWriter outputFile = new StreamWriter(file))
+        {
+            foreach (Entry CurrentEntry in Entries)
+            {
+                outputFile.WriteLine($"{CurrentEntry.Date}|{CurrentEntry.PromptText}|{CurrentEntry.UserJournalWritten}");
+            }
+        }
+    }
 }
