@@ -37,10 +37,14 @@ class Program
                 myJournal.DisplayAll();
                 break;
                 case "3":
-                Console.WriteLine("Load");
+                Console.WriteLine("What is the filename?");
+                string loadFile = Console.ReadLine();
+                myJournal.LoadFromFile(loadFile);
                 break;
                 case "4":
-                Console.WriteLine("Save");
+                Console.WriteLine("What is the filename?");
+                string saveFile = Console.ReadLine();
+                myJournal.SaveToFile(saveFile);
                 break;
                 case "5":
                 keepOnRunning = false;
