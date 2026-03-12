@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Runtime.InteropServices;
 
 class Program
 {
@@ -14,15 +15,17 @@ class Program
 
             switch(userInput)
                 {
-                case "1":
+                case "":
+                Console.Clear();
                 Console.WriteLine("case 1 test ");
+                Console.Write("Enter key has been pressed.");
                 break;
                 
                 case "quit":
                 keepOnRunning = false;
                 break;
                 default:
-                Console.WriteLine("Please input a valid response, enter or 'quit' to finish the program. ");
+                Console.WriteLine("Please input a valid response, press enter or type 'quit' to close the program. ");
                 break; 
                 }
                 
