@@ -1,5 +1,3 @@
-using System.Numerics;
-
 class Word
 {
     private string _text;
