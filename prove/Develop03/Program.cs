@@ -12,22 +12,23 @@ class Program
         bool keepOnRunning = true;
             do
                 {
+               
                 Console.Clear();
                 Console.WriteLine(scripture.GetDisplayText());
-
-                    if (scripture.IsCompletelyHidden() == true)
-                        {
+                if (scripture.IsCompletelyHidden() == true)
+                    {
                         keepOnRunning = false;
-                        }
-                    switch(userInput)
+                        break;
+                    }
+                Console.Write("\nPress enter to continue or type 'quit' to exit the program: ");
+                string userInput = Console.ReadLine();
+                switch(userInput)
                     {
                     
                     case "":
-                    
-                    Console.WriteLine(scripture.GetDisplayText());
-                    Console.Write("Press enter to continue or type 'quit' to exit the program: ");
+                    scripture.HideRandomWords(3);
+                    break;
 
-                    string userInput = Console.ReadLine();
                     case "quit":
                     keepOnRunning = false;
                     break;
@@ -35,7 +36,7 @@ class Program
                     default:
                     Console.WriteLine("Please input a valid response, press enter or type 'quit' to exit the program.");
                     Console.ReadLine();
-                    break; 
+                    break;
                     }
                 }
             while (keepOnRunning);
