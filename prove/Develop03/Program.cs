@@ -6,31 +6,38 @@ class Program
 {
     static void Main(string[] args)
     {
+        Reference reference = new Reference("Proverbs", 3, 5, 6);
+        string text ="Trust in the Lord with all thine heart and lean not unto thine own understanding";
+        Scripture scripture = new Scripture(reference, text);
         bool keepOnRunning = true;
-        Console.WriteLine("Press enter to continue or type 'quit' to finish: ");
             do
                 {
-                string userInput = Console.ReadLine();
-            
+                Console.Clear();
+                Console.WriteLine(scripture.GetDisplayText());
 
-                switch(userInput)
+                    if (scripture.IsCompletelyHidden() == true)
+                        {
+                        keepOnRunning = false;
+                        }
+                    switch(userInput)
                     {
-                    case "":
-                    Console.Clear();
-                    Console.WriteLine("case 1 test ");
-                    Console.WriteLine("Enter key has been pressed.");
-                    break;
                     
+                    case "":
+                    
+                    Console.WriteLine(scripture.GetDisplayText());
+                    Console.Write("Press enter to continue or type 'quit' to exit the program: ");
+
+                    string userInput = Console.ReadLine();
                     case "quit":
                     keepOnRunning = false;
                     break;
+                        
                     default:
-                    Console.WriteLine("Please input a valid response, press enter or type 'quit' to close the program.");
+                    Console.WriteLine("Please input a valid response, press enter or type 'quit' to exit the program.");
+                    Console.ReadLine();
                     break; 
                     }
-                
                 }
             while (keepOnRunning);
     }
-
 }
