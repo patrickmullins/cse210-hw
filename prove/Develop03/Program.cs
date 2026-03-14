@@ -28,7 +28,7 @@ class Program
                 string userInput = Console.ReadLine();
                 switch(userInput)
                     {
-                    
+                    //calls upon the logic to hide 3 random words within the scripture class.
                     case "":
                     scripture.HideRandomWords(3);
                     break;
@@ -36,7 +36,7 @@ class Program
                     case "quit":
                     keepOnRunning = false;
                     break;
-                        
+                    // displays this error message if user does not type a blank enter button or "quit"
                     default:
                     Console.WriteLine("Please input a valid response, press enter or type 'quit' to exit the program.");
                     Console.ReadLine();
