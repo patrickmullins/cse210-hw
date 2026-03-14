@@ -22,9 +22,7 @@ class Word
         }
         else
         {
-           return _text; 
+           return _text;
         }
     }
-
-
 }
