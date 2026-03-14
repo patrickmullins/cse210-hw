@@ -2,6 +2,7 @@ class Scripture
 {
     private Reference _reference;
     private List<Word> _words = new List<Word>();
+    
 
     // created scripture class to store reference and text strings.
     public Scripture(Reference reference, string text)
@@ -29,6 +30,19 @@ class Scripture
     public void HideRandomWords(int numberHidden)
     {
         Random rnd = new Random();
-        int randomIndex = rnd.Next(0, 5);
+        for (int i = 0; i < numberHidden; i++)
+        {
+            List<Word> unhiddenWords = _words.Where(w => w.IsHidden() == false).ToList();
+            if (unhiddenWords.Count == 0)
+            {
+                break;
+            }
+            int randomIndex = rnd.Next(unhiddenWords.Count);
+            unhiddenWords[randomIndex].Hide();
+        }
+    }
+    public bool IsCompletelyHidden()
+    {
+        return _words.All(w => w.IsHidden());
     }
 }

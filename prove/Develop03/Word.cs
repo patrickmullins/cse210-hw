@@ -13,6 +13,11 @@ class Word
     {
         _isHidden = true;
     }
+    public bool IsHidden()
+    {
+    return _isHidden;
+    }
+    
     public string GetDisplayText()
     {
         // if statement to check if the word is hidden by reading the length of the full text 
