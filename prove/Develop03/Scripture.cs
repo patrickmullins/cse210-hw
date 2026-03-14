@@ -15,5 +15,20 @@ class Scripture
            _words.Add(new Word(line));             
         }
     }
-
+    public string GetDisplayText()
+    {
+        
+        string scriptureText = "";
+        // created loop to get the words within the list to display later
+        foreach(Word currentWord in _words)
+        {
+        scriptureText += currentWord.GetDisplayText() + " ";
+        }
+        return $"{_reference.GetDisplayText()} {scriptureText}";
+    }
+    public void HideRandomWords(int numberHidden)
+    {
+        Random rnd = new Random();
+        int randomIndex = rnd.Next(0, 5);
+    }
 }
