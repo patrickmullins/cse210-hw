@@ -1,11 +1,13 @@
-//using System;
+using System;
 
 
-//class Activity(Name, description, userSessionDuration)
-//{
-//string _name = Name;
-//string _discription = description;
-//int _userSessionDuration = _userSessionDuration;
+class Activity(name, discription)
+{
+    private string _name = name;
+    private string _discription = discription;
 
-//}
+    protected int _userSessionDuration;
+}
+
+
 
