@@ -24,7 +24,8 @@ class Program
                 break;
 
                 default:
-                Console.Write("Invalid Choice, please select a number from 1-4 to choose an option.");
+                Console.Write("Invalid Choice, please select a number from 1-4 to choose an option. Press any key to continue");
+                //used a readkey to allow user to read the error message then prompts them for a keypress to continue with a valid selection for the program
                 Console.ReadKey();
                 break;
             }
