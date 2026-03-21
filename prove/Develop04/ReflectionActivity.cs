@@ -26,16 +26,24 @@ class ReflectionActivity : Activity
     };
     public override void Run()
     {
-        Random _rand = new Random();
-        
+        Random rand = new Random();
+        string prompt = _prompts[rand.Next(_prompts.Count)];
+        string question = _questions[rand.Next(_questions.Count)];
+
         standardStartMessage();
         DateTime endTime = DateTime.Now.AddSeconds(_userSessionDuration);
         Console.Clear();
         Console.WriteLine("Get Ready...");
         showCountSession(3);
+        Console.WriteLine("");
+        Console.WriteLine("Consider the following prompt:");
+        Console.WriteLine($"\n ----- {prompt} ---- \n");
+        Console.WriteLine("When you have something in mind, press enter to continuie.");
+        Console.ReadLine();
         while(DateTime.Now < endTime)
         {
-            
+            Console.WriteLine($"\n ----- {question} ---- \n");
+            showCountSession(4);
         }
 
     }
