@@ -1,7 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.Threading;
 
-
-class Activity(name, discription)
+abstract class Activity(string name, string discription)
 {
     private string _name = name;
     private string _discription = discription;
@@ -10,8 +11,7 @@ class Activity(name, discription)
 
     public void standardStartMessage()
     {
-        Console.clear();
-
+        Console.Clear();
         Console.Write($"Hello welcome to the {_name} Activity.");
         Console.Write(_discription);
         Console.Write("How long, in seconds, would you like for your session?");
@@ -25,12 +25,36 @@ class Activity(name, discription)
 
     }
     
-    public void showCountSession()
+    public void showCountSession(int seconds)
     {
-        List<string> timer = new List<string>() {"|" "/"  "-" "\\"}; 
-    }
-    
-    abstract void Run();
+        
+        DateTime endTimer = DateTime.Now.AddSeconds(seconds);
+        List<string> timer = new List<string>() {"|", "/",  "-", "\\"};
+        int i = 0;
+        while(DateTime.Now < endTimer)
+            {
+                Console.Write(timer[i]);
+                Thread.Sleep(500);
+                Console.Write("\b \b");
+                i++;
+                if (i >= timer.Count)
+                    {
+                    i = 0;
+                    }
+            }
 
+
+    }
+    public void countingDown()
+    {
+        for(int i = 3; i> 0; i--)
+        {
+            Console.Write(i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
+        }
+
+    }
+    public abstract void Run();
 
 }
