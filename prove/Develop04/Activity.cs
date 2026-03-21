@@ -25,10 +25,10 @@ abstract class Activity(string name, string discription)
 
     }
     
-    public void showCountSession(int seconds)
+    public void showCountSession()
     {
         
-        DateTime endTimer = DateTime.Now.AddSeconds(seconds);
+        DateTime endTimer = DateTime.Now.AddSeconds(_userSessionDuration);
         List<string> timer = new List<string>() {"|", "/",  "-", "\\"};
         int i = 0;
         while(DateTime.Now < endTimer)
