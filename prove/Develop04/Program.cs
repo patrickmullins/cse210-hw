@@ -4,8 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        testActivity test = new testActivity();
-        
+        BreathingActivity breathing = new BreathingActivity();
         bool runningProgram = true;
         
         do
@@ -22,7 +21,7 @@ class Program
             switch(userInput)
             {
                 case "1":
-                test.Run();
+                breathing.Run();
                 break;
                 case "4":
                 runningProgram = false;

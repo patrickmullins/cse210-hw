@@ -12,7 +12,7 @@ abstract class Activity(string name, string discription)
     public void standardStartMessage()
     {
         Console.Clear();
-        Console.Write($"Hello welcome to the {_name} Activity. \n");
+        Console.Write($"Welcome to the {_name} Activity. \n");
         Console.WriteLine(_discription);
         Console.Write("How long, in seconds, would you like for your session? ");
         _userSessionDuration = int.Parse(Console.ReadLine());
