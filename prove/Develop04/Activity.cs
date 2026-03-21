@@ -8,19 +8,29 @@ class Activity(name, discription)
 
     protected int _userSessionDuration;
 
-
-public void standardEndMessage()
-    {
-        Console.Write("Well done!");
-    }
-
-public void standardStartMessage()
+    public void standardStartMessage()
     {
         Console.clear();
 
-        Console.Write("This is a test from the start message method");
-    }
+        Console.Write($"Hello welcome to the {_name} Activity.");
+        Console.Write(_discription);
+        Console.Write("How long, in seconds, would you like for your session?");
+        _userSessionDuration = int.Parse(Console.ReadLine());
 
-public abstract void Run();
+    }
+    public void standardEndMessage()
+    {
+        Console.Write("Well done!");
+        Console.Write($"You have completed another {_userSessionDuration} seconds of the {_name} Activity.");
+
+    }
+    
+    public void showCountSession()
+    {
+        List<string> timer = new List<string>() {"|" "/"  "-" "\\"}; 
+    }
+    
+    abstract void Run();
+
 
 }
