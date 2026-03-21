@@ -6,6 +6,7 @@ class Program
     {
         BreathingActivity breathing = new BreathingActivity();
         ReflectionActivity reflect = new ReflectionActivity();
+        ListingActivity listing = new ListingActivity();
         bool runningProgram = true;
         
         do
@@ -26,6 +27,9 @@ class Program
                 break;
                 case "2":
                 reflect.Run();
+                break;
+                case "3":
+                listing.Run();
                 break;
                 case "4":
                 runningProgram = false;
