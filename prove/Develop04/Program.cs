@@ -5,6 +5,7 @@ class Program
     static void Main(string[] args)
     {
         BreathingActivity breathing = new BreathingActivity();
+        ReflectionActivity reflect = new ReflectionActivity();
         bool runningProgram = true;
         
         do
@@ -22,6 +23,9 @@ class Program
             {
                 case "1":
                 breathing.Run();
+                break;
+                case "2":
+                reflect.Run();
                 break;
                 case "4":
                 runningProgram = false;

@@ -8,7 +8,7 @@ class BreathingActivity : Activity
     public override void Run()
     {
         
-
+        
         standardStartMessage();
 
         DateTime endTime = DateTime.Now.AddSeconds(_userSessionDuration);
