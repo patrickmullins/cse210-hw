@@ -7,9 +7,31 @@ class BreathingActivity : Activity
     }
     public override void Run()
     {
+        
+
         standardStartMessage();
-        showCountSession();
+
+        DateTime endTime = DateTime.Now.AddSeconds(_userSessionDuration);
+
+        Console.Clear();
+        Console.WriteLine("Get Ready...");
+        showCountSession(3);
+
+        while(DateTime.Now < endTime)
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.Write("Breathe in...");
+            countingDown(4);
+            Console.WriteLine();
+
+            Console.Write("Now breathe out...");
+            countingDown(5);
+            Console.WriteLine();
+
+        }
+       
         standardEndMessage();
-        Console.ReadKey();
+        showCountSession(5);
     }
 }

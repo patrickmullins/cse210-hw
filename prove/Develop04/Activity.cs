@@ -21,14 +21,14 @@ abstract class Activity(string name, string discription)
     public void standardEndMessage()
     {
         Console.WriteLine("Well done!");
-        Console.Write($"You have completed another {_userSessionDuration} seconds of the {_name} Activity.");
+        Console.WriteLine($"You have completed another {_userSessionDuration} seconds of the {_name} Activity.");
 
     }
     
-    public void showCountSession()
+    public void showCountSession(int seconds)
     {
         
-        DateTime endTimer = DateTime.Now.AddSeconds(_userSessionDuration);
+        DateTime endTimer = DateTime.Now.AddSeconds(seconds);
         List<string> timer = new List<string>() {"|", "/",  "-", "\\"};
         int i = 0;
         while(DateTime.Now < endTimer)
@@ -46,9 +46,9 @@ abstract class Activity(string name, string discription)
 
     }
     //loop to count down from 3 to 0 for the activities that require it.
-    public void countingDown()
+    public void countingDown(int seconds)
     {
-        for (int i = 3; i > 0; i--)
+        for (int i = seconds; i > 0; i--)
         {
             Console.Write(i);
             Thread.Sleep(1000);
