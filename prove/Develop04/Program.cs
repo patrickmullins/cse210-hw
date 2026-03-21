@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
+        testActivity test = new testActivity();
+        test.Run();
         bool runningProgram = true;
         
         do
@@ -19,6 +21,9 @@ class Program
             string userInput = Console.ReadLine();
             switch(userInput)
             {
+                case "1":
+                
+                break;
                 case "4":
                 runningProgram = false;
                 break;

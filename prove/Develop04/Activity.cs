@@ -34,7 +34,7 @@ abstract class Activity(string name, string discription)
         while(DateTime.Now < endTimer)
             {
                 Console.Write(timer[i]);
-                Thread.Sleep(500);
+                Thread.Sleep(100);
                 Console.Write("\b \b");
                 i++;
                 if (i >= timer.Count)
@@ -47,7 +47,7 @@ abstract class Activity(string name, string discription)
     }
     public void countingDown()
     {
-        for(int i = 3; i> 0; i--)
+        for (int i = 3; i > 0; i--)
         {
             Console.Write(i);
             Thread.Sleep(1000);
