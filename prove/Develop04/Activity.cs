@@ -21,7 +21,10 @@ abstract class Activity(string name, string discription)
     public void standardEndMessage()
     {
         Console.WriteLine("Well done!");
+        showCountSession(5);
+        Console.WriteLine();
         Console.WriteLine($"You have completed another {_userSessionDuration} seconds of the {_name} Activity.");
+        showCountSession(5);
 
     }
     

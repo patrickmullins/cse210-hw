@@ -28,7 +28,7 @@ class ReflectionActivity : Activity
     {
         Random rand = new Random();
         string prompt = _prompts[rand.Next(_prompts.Count)];
-        string question = _questions[rand.Next(_questions.Count)];
+        
 
         standardStartMessage();
         DateTime endTime = DateTime.Now.AddSeconds(_userSessionDuration);
@@ -38,13 +38,18 @@ class ReflectionActivity : Activity
         Console.WriteLine("");
         Console.WriteLine("Consider the following prompt:");
         Console.WriteLine($"\n ----- {prompt} ---- \n");
-        Console.WriteLine("When you have something in mind, press enter to continuie.");
+        Console.WriteLine("When you have something in mind, press enter to continue.");
         Console.ReadLine();
+        Console.WriteLine("Now ponder on each of the following questions as they related to this experience:");
+        Console.Write($"You may begin in: ");
+        countingDown(5);
+        Console.Clear();
         while(DateTime.Now < endTime)
         {
-            Console.WriteLine($"\n ----- {question} ---- \n");
-            showCountSession(4);
+            string question = _questions[rand.Next(_questions.Count)];
+            Console.Write($"\n ----- {question} ---- \n");
+            showCountSession(5);
         }
-
+        standardEndMessage();
     }
 }
