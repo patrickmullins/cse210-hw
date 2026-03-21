@@ -1,6 +1,6 @@
 class testActivity : Activity
 {
-    public testActivity() : base("test", "this is a test activity.")
+    public testActivity() : base("testing is awesome title", "this is a test activity discription lets find out if this actually prints in the description field")
     {
 
     }
@@ -10,5 +10,7 @@ class testActivity : Activity
         countingDown();
         showCountSession();
         standardEndMessage();
+        Console.ReadKey();
+
     }
 }

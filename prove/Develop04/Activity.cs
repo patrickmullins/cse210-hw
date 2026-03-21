@@ -12,15 +12,15 @@ abstract class Activity(string name, string discription)
     public void standardStartMessage()
     {
         Console.Clear();
-        Console.Write($"Hello welcome to the {_name} Activity.");
-        Console.Write(_discription);
-        Console.Write("How long, in seconds, would you like for your session?");
+        Console.Write($"Hello welcome to the {_name} Activity. \n");
+        Console.WriteLine(_discription);
+        Console.Write("How long, in seconds, would you like for your session? ");
         _userSessionDuration = int.Parse(Console.ReadLine());
 
     }
     public void standardEndMessage()
     {
-        Console.Write("Well done!");
+        Console.WriteLine("Well done!");
         Console.Write($"You have completed another {_userSessionDuration} seconds of the {_name} Activity.");
 
     }
@@ -34,7 +34,7 @@ abstract class Activity(string name, string discription)
         while(DateTime.Now < endTimer)
             {
                 Console.Write(timer[i]);
-                Thread.Sleep(100);
+                Thread.Sleep(150);
                 Console.Write("\b \b");
                 i++;
                 if (i >= timer.Count)
@@ -45,6 +45,7 @@ abstract class Activity(string name, string discription)
 
 
     }
+    //loop to count down from 3 to 0 for the activities that require it.
     public void countingDown()
     {
         for (int i = 3; i > 0; i--)

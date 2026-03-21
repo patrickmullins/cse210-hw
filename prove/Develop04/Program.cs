@@ -5,7 +5,7 @@ class Program
     static void Main(string[] args)
     {
         testActivity test = new testActivity();
-        test.Run();
+        
         bool runningProgram = true;
         
         do
@@ -22,7 +22,7 @@ class Program
             switch(userInput)
             {
                 case "1":
-                
+                test.Run();
                 break;
                 case "4":
                 runningProgram = false;
