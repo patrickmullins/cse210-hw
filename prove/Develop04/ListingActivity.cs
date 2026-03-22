@@ -13,9 +13,6 @@ class ListingActivity : Activity
         "Who are some of your personal heroes?"
     };
    
-   
-   
-    
     public override void Run()
     {
         standardStartMessage();
